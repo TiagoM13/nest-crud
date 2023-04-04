@@ -8,9 +8,7 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     TasksModule,
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(
-      `mongodb://${process.env.DATABASE_USER}:${process.env.DATABASE_PASS}@localhost:27017/admin`,
-    ),
+    MongooseModule.forRoot(process.env.DATABASE_URL),
   ],
   controllers: [],
   providers: [],
